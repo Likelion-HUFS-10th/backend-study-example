@@ -4,9 +4,11 @@
     <h1>Blog Project</h1>
     <h4><a href="{% url 'blog:new' %}">New Post</a></h4>
     {% for blog in blogs %}
-        {{blog.title}} </br>
-        {{blog.writer}} </br>
-        {{blog.summary}} 
+        <div>
+        <h3>{{ blog.title }}</h3>
+        <p>{{ blog.writer}}</p>
+		    {{ blog.body }}
+        </div>
         <a href="{% url 'blog:detail' blog.id %}">...more</a></br>
     {% endfor %}
 {% endblock %}
